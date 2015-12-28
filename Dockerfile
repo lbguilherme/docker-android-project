@@ -19,11 +19,10 @@ ENV ANDROID_SDK /usr/local/android-sdk-linux
 ENV PATH ${ANDROID_HOME}/tools:$ANDROID_HOME/platform-tools:$PATH
 
 # Install Android SDK components
-
-ONBUILD COPY android_sdk_components.env /android_sdk_components.env
-ONBUILD RUN echo y | android update sdk --no-ui --all --filter "$(cat /android_sdk_components.env)"
+RUN echo y | android update sdk --no-ui --all --filter "tools,platform-tools,android-23"
+RUN echo y | android update sdk --no-ui --all --filter "extra-android-m2repository,extra-android-support,extra-google-google_play_services,extra-google-m2repository"
+RUN echo y | android update sdk --no-ui --all --filter "build-tools-23.0.2"
 
 # Support Gradle
 ENV TERM dumb
 ENV JAVA_OPTS -Xms256m -Xmx512m
-

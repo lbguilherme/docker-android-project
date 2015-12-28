@@ -1,4 +1,4 @@
-# Dockerfile for Android Projects [![Docker Repository on Quay.io](https://quay.io/repository/ainoya/android-project/status "Docker Repository on Quay.io")](https://quay.io/repository/ainoya/android-project)
+# Dockerfile for Android Projects
 
 This is a Dockerfile to make minumum images for Android projects.
 No `ant`, `maven`, nor `android-ndk` are included.
